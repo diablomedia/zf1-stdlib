@@ -1,0 +1,8 @@
+parameters:
+    ignoreErrors:
+        - '#Class WeakRef not found\.#'
+        - '#Instantiated class WeakRef not found\.#'
+        - '#Property .+ has unknown class WeakRef as its type\.#'
+        - '#Call to method get\(\) on an unknown class WeakRef\.#'
+        - '#Casting to .+ something that.s already .+\.#'
+        - '#Variable \$key might not be defined\.#'
