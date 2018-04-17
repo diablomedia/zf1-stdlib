@@ -41,9 +41,9 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
 
     public function testSerializationAndDeserializationShouldMaintainState()
     {
-        $s = serialize($this->queue);
+        $s            = serialize($this->queue);
         $unserialized = unserialize($s);
-        $count = count($this->queue);
+        $count        = count($this->queue);
         $this->assertSame($count, count($unserialized), 'Expected count ' . $count . '; received ' . count($unserialized));
 
         $expected = array();
@@ -65,7 +65,7 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
             'baz',
             'bat',
         );
-        $test     = $this->queue->toArray();
+        $test = $this->queue->toArray();
         $this->assertSame($expected, $test, var_export($test, 1));
     }
 
@@ -77,7 +77,7 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
             2,
             1,
         );
-        $test     = $this->queue->toArray(Zend_Stdlib_PriorityQueue::EXTR_PRIORITY);
+        $test = $this->queue->toArray(Zend_Stdlib_PriorityQueue::EXTR_PRIORITY);
         $this->assertSame($expected, $test, var_export($test, 1));
     }
 
@@ -89,7 +89,7 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
             array('data' => 'baz', 'priority' => 2),
             array('data' => 'bat', 'priority' => 1),
         );
-        $test     = $this->queue->toArray(Zend_Stdlib_PriorityQueue::EXTR_BOTH);
+        $test = $this->queue->toArray(Zend_Stdlib_PriorityQueue::EXTR_BOTH);
         $this->assertSame($expected, $test, var_export($test, 1));
     }
 
@@ -110,7 +110,7 @@ class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
     {
         $this->queue->remove('baz');
         $expected = array('bar', 'foo', 'bat');
-        $test = array();
+        $test     = array();
         foreach ($this->queue as $item) {
             $test[] = $item;
         }

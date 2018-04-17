@@ -62,7 +62,7 @@ class Zend_Stdlib_CallbackHandlerTest extends PHPUnit\Framework\TestCase
     public function testCallShouldInvokeCallbackWithSuppliedArguments()
     {
         $handler = new Zend_Stdlib_CallbackHandler(array( $this, 'handleCall' ));
-        $args   = array('foo', 'bar', 'baz');
+        $args    = array('foo', 'bar', 'baz');
         $handler->call($args);
         $this->assertSame($args, $this->args);
     }
@@ -78,7 +78,7 @@ class Zend_Stdlib_CallbackHandlerTest extends PHPUnit\Framework\TestCase
         $handler = new Zend_Stdlib_CallbackHandler(array('Zend_Stdlib_TestAsset_SignalHandlers_ObjectCallback', 'test'));
         if (!is_callable(array('Zend_Stdlib_TestAsset_SignalHandlers_ObjectCallback', 'test'))) {
             echo "\nClass exists? " . var_export(class_exists('Zend_Stdlib_TestAsset_SignalHandlers_ObjectCallback'), 1) . "\n";
-            echo "Include path: " . get_include_path() . "\n";
+            echo 'Include path: ' . get_include_path() . "\n";
         }
         $this->assertEquals('bar', $handler->call(array()));
     }

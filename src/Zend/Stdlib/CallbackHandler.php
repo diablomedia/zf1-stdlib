@@ -58,7 +58,7 @@ class Zend_Stdlib_CallbackHandler
      */
     public function __construct($callback, array $metadata = array())
     {
-        $this->metadata  = $metadata;
+        $this->metadata = $metadata;
         $this->registerCallback($callback);
     }
 
@@ -133,7 +133,7 @@ class Zend_Stdlib_CallbackHandler
 
         // We have an array callback with an object as the first argument;
         // pass it to WeakRef, and then register the new callback
-        $target = new WeakRef($target);
+        $target         = new WeakRef($target);
         $this->callback = array($target, $method);
     }
 

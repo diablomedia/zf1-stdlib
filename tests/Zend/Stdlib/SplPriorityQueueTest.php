@@ -58,9 +58,9 @@ class Zend_Stdlib_SplPriorityQueueTest extends PHPUnit\Framework\TestCase
 
     public function testSerializationAndDeserializationShouldMaintainState()
     {
-        $s = serialize($this->queue);
+        $s            = serialize($this->queue);
         $unserialized = unserialize($s);
-        $count = count($this->queue);
+        $count        = count($this->queue);
         $this->assertSame($count, count($unserialized), 'Expected count ' . $count . '; received ' . count($unserialized));
 
         $expected = array();
@@ -82,7 +82,7 @@ class Zend_Stdlib_SplPriorityQueueTest extends PHPUnit\Framework\TestCase
             'baz',
             'bat',
         );
-        $test     = $this->queue->toArray();
+        $test = $this->queue->toArray();
         $this->assertSame($expected, $test, var_export($test, 1));
     }
 }
