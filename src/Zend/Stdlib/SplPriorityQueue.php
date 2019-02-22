@@ -60,7 +60,7 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      *
      * @param  mixed $datum
      * @param  mixed $priority
-     * @return void
+     * @return bool
      */
     public function insert($datum, $priority)
     {
@@ -73,7 +73,7 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
                 $priority = array($priority, $this->serial--);
             }
         }
-        parent::insert($datum, $priority);
+        return parent::insert($datum, $priority);
     }
 
     /**

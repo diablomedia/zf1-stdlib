@@ -86,7 +86,7 @@ class Zend_Stdlib_CallbackHandler
      * instance, this method will pass the object to a WeakRef instance prior
      * to registering the callback.
      *
-     * @param  Callable $callback
+     * @param  callable $callback
      * @return void
      */
     protected function registerCallback($callback)
