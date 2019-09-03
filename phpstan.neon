@@ -23,5 +23,5 @@ parameters:
             message: '#Method Zend_Stdlib_CallbackHandler::getCallback\(\) should return callable\(\): mixed but returns array\(mixed, mixed\)\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         -
-            message: '#Parameter \#1 \$error_handler of function set_error_handler expects \(callable\)\|null, array<int, \$this\(Zend_Stdlib_CallbackHandler\)\|string> given\.#'
+            message: '#Parameter \#1 \$error_handler of function set_error_handler expects \(callable\(int, string, string, int, array\): bool\)\|null, array\(\$this\(Zend_Stdlib_CallbackHandler\), .errorHandler.\) given\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
