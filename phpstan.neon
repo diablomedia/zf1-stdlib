@@ -1,5 +1,7 @@
 parameters:
-    level: 7
+    level: 8
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
     paths:
         - ./
     excludes_analyse:
@@ -24,4 +26,8 @@ parameters:
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         -
             message: '#Parameter \#1 \$error_handler of function set_error_handler expects \(callable\(int, string, string, int, array\): bool\)\|null, array\(\$this\(Zend_Stdlib_CallbackHandler\), .errorHandler.\) given\.#'
+            path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
+        # Seems like $this->error could be true here (defined as bool, does get set to true in another method)
+        -
+            message: '#Right side of \|\| is always false\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
