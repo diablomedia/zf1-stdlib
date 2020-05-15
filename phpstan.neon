@@ -19,7 +19,7 @@ parameters:
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         # An array can be a callable: [$object, 'method']
         -
-            message: '#Property Zend_Stdlib_CallbackHandler::\$callback \(\(callable\)\|WeakRef\) does not accept array<int, mixed>\.#'
+            message: '#Property Zend_Stdlib_CallbackHandler::\$callback \(\(callable\(\): mixed\)\|WeakRef\) does not accept array\(WeakRef, mixed\)\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         -
             message: '#Method Zend_Stdlib_CallbackHandler::getCallback\(\) should return callable\(\): mixed but returns array\(mixed, mixed\)\.#'
