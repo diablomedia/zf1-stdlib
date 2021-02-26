@@ -1,5 +1,5 @@
 # grumphp.yml
-parameters:
+grumphp:
     tasks:
         composer:
             strict: true

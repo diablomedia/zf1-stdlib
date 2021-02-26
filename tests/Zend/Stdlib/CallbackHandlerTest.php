@@ -32,7 +32,7 @@
  */
 class Zend_Stdlib_CallbackHandlerTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         if (isset($this->args)) {
             unset($this->args);

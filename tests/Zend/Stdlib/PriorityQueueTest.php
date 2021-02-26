@@ -30,7 +30,7 @@
  */
 class Zend_Stdlib_PriorityQueueTest extends PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->queue = new Zend_Stdlib_PriorityQueue();
         $this->queue->insert('foo', 3);
