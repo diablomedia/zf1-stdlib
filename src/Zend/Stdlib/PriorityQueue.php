@@ -45,6 +45,7 @@ class Zend_Stdlib_PriorityQueue implements Countable, IteratorAggregate, Seriali
     /**
      * Inner queue class to use for iteration
      * @var string
+     * @phpstan-var class-string<SplPriorityQueue>
      */
     protected $queueClass = Zend_Stdlib_SplPriorityQueue::class;
 
@@ -231,6 +232,7 @@ class Zend_Stdlib_PriorityQueue implements Countable, IteratorAggregate, Seriali
      * internal queue class. The class provided should extend SplPriorityQueue.
      *
      * @param  string $class
+     * @phpstan-param class-string<SplPriorityQueue> $class
      * @return $this
      */
     public function setInternalQueueClass($class)

@@ -4,7 +4,7 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
     paths:
         - ./
-    excludes_analyse:
+    excludePaths:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
     ignoreErrors:
@@ -19,13 +19,13 @@ parameters:
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         # An array can be a callable: [$object, 'method']
         -
-            message: '#Property Zend_Stdlib_CallbackHandler::\$callback \(\(callable\(\): mixed\)\|WeakRef\) does not accept array\(WeakRef, mixed\)\.#'
+            message: '#Property Zend_Stdlib_CallbackHandler::\$callback \(\(callable\(\): mixed\)\|WeakRef\) does not accept array{WeakRef, mixed}\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         -
-            message: '#Method Zend_Stdlib_CallbackHandler::getCallback\(\) should return callable\(\): mixed but returns array\(mixed, mixed\)\.#'
+            message: '#Method Zend_Stdlib_CallbackHandler::getCallback\(\) should return callable\(\): mixed but returns array{mixed, mixed}\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         -
-            message: '#Parameter \#1 \$callback of function set_error_handler expects \(callable\(int, string, string, int, array\): bool\)\|null, array\(\$this\(Zend_Stdlib_CallbackHandler\), .errorHandler.\) given\.#'
+            message: '#Parameter \#1 \$callback of function set_error_handler expects \(callable\(int, string, string, int, array\): bool\)\|null, array{\$this\(Zend_Stdlib_CallbackHandler\), .errorHandler.} given\.#'
             path: %currentWorkingDirectory%/src/Zend/Stdlib/CallbackHandler.php
         # Seems like $this->error could be true here (defined as bool, does get set to true in another method)
         -
