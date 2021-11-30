@@ -107,6 +107,11 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      */
     public function serialize()
     {
+        return serialize($this->__serialize());
+    }
+
+    public function __serialize(): array
+    {
         $data = array();
         $this->setExtractFlags(self::EXTR_BOTH);
         while ($this->valid()) {
@@ -120,7 +125,7 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
             $this->insert($item['data'], $item['priority']);
         }
 
-        return serialize($data);
+        return $data;
     }
 
     /**
@@ -131,7 +136,12 @@ class Zend_Stdlib_SplPriorityQueue extends SplPriorityQueue implements Serializa
      */
     public function unserialize($data)
     {
-        foreach (unserialize($data) as $item) {
+        $this->__unserialize(unserialize($data));
+    }
+
+    public function __unserialize(array $data): void
+    {
+        foreach ($data as $item) {
             $this->insert($item['data'], $item['priority']);
         }
     }
