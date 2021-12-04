@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "prefer-stable": true,
     "require": {
-        "php": "^7.4 || ~8.0 || ~8.1"
+        "php": "^7.4 || ~8.0.0 || ~8.1.0"
     },
     "autoload": {
         "psr-0": {
