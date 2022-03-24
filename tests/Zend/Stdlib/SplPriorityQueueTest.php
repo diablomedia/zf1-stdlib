@@ -61,7 +61,7 @@ class Zend_Stdlib_SplPriorityQueueTest extends PHPUnit\Framework\TestCase
         $s            = serialize($this->queue);
         $unserialized = unserialize($s);
         $count        = count($this->queue);
-        $this->assertSame($count, count($unserialized), 'Expected count ' . $count . '; received ' . count($unserialized));
+        $this->assertCount($count, $unserialized, 'Expected count ' . $count . '; received ' . count($unserialized));
 
         $expected = array();
         foreach ($this->queue as $item) {
