@@ -91,7 +91,7 @@ class Zend_Stdlib_CallbackHandler
      */
     protected function registerCallback($callback)
     {
-        set_error_handler(array($this, 'errorHandler'), E_STRICT);
+        set_error_handler(array($this, 'errorHandler'));
         $callable = is_callable($callback);
         restore_error_handler();
         if (!$callable || $this->error) {
